@@ -1,3 +1,12 @@
+@font-face {
+  font-family: nunito;
+  src: url(./fonts/Nunito-VariableFont_wght.ttf);
+}
+
+* {
+  font-family: 'nunito', sans-serif;
+}
+
 body,
 html {
   margin: 0;
@@ -10,7 +19,7 @@ html {
   height: 100%;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 80px 1fr 50px;
+  grid-template-rows: 80px 1fr 60px;
 }
 
 #header {
@@ -34,12 +43,20 @@ input {
   background-color: rgba(122, 122, 122, 0.589);
   color: white;
   width: 100%;
+  font-weight: 600;
+}
+
+input::placeholder {
+  color: rgb(235, 235, 235);
 }
 
 #weather-container {
   background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
 }
 
 #footer {
-  background-color: aqua;
+  background-color: rgb(107, 255, 255);
 }
