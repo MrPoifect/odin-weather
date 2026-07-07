@@ -1,6 +1,9 @@
+
 #weather-results {
   margin: auto auto;
   max-width: 100%;
+
+  padding: 12px;
 }
 
 #title {
@@ -31,7 +34,7 @@
 .temp-icon.big {
   font-size: 28px;
   position: relative;
-  bottom: 50px;
+  bottom: 45px;
   right: 12px;
   font-weight: 700;
 }
@@ -46,8 +49,10 @@
 }
 
 .temp-icon.small {
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 700;
+  position: relative;
+  bottom: 6px;
 }
 
 li {
@@ -60,7 +65,7 @@ li {
 }
 
 h3 {
-  font-size: 32px;
+  font-size: 28px;
   margin: 0;
 }
 

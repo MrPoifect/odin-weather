@@ -1,5 +1,5 @@
 export { searchCity };
-import { displayErrorModal } from '../index.js';
+import { displayCityErrorModal, displayLocationErrorModal } from '../index.js';
 import { renderCardInfo } from './info-card.js';
 
 const weatherURL =
@@ -19,9 +19,29 @@ async function searchCity(city) {
   try {
     const response = await fetch(weatherURL + city + searchParameters);
     const weatherData = await response.json();
-    renderCardInfo(weatherData);
+    locateCountry(weatherData);
     return weatherData;
   } catch (error) {
-    displayErrorModal(city);
+    displayCityErrorModal(city);
+  }
+}
+
+async function locateCountry(weatherData) {
+  const lat = weatherData.latitude.toString();
+  const lon = weatherData.longitude.toString();
+
+  try {
+    const response = await fetch(
+      'https://us1.locationiq.com/v1/reverse?key=pk.cb063cdfbe3c30ebcfb03592ec14313a&lat=' +
+        lat +
+        '&lon=' +
+        lon +
+        '&format=json'
+    );
+    const locationData = await response.json();
+    renderCardInfo(weatherData, locationData);
+    console.log(locationData);
+  } catch (error) {
+    displayLocationErrorModal();
   }
 }
