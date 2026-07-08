@@ -1,7 +1,7 @@
-
 #weather-results {
   margin: auto auto;
   max-width: 100%;
+  display: none;
 
   padding: 12px;
 }
@@ -62,16 +62,30 @@ li {
   gap: 6px;
   font-size: 20px;
   font-weight: 700;
-
 }
 
 h3 {
   font-size: 28px;
   margin: 0;
-  color: rgb(77, 77, 77);
+  color: rgb(116, 116, 116);
+  position: relative;
+  top: calc(50px - 28px);
 }
 
 h2 {
   font-size: 45px;
   margin: 0;
 }
+
+#current-weather {
+  display: flex;
+}
+
+img {
+  display: none;
+  margin-left: 10px;
+  height: 50px;
+  width: 50px;
+  filter: invert(0.45);
+}
+

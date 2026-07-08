@@ -80,3 +80,5 @@ function changeUnitToFahrenheit() {
   tempTxt.textContent = Math.round(globalWData.currentConditions.temp);
   tempFeelTxt.textContent = Math.round(globalWData.currentConditions.feelslike);
 }
+
+searchCity("Cockermouth");

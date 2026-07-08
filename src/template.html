@@ -4,9 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather</title>
+    <link rel="stylesheet" href="ui-styles.css">
   </head>
   <body>
     <div id="container">
+      <span id="loader"></span>
       <div id="header">
         <h1>Weather.</h1>
         <form action="">
@@ -18,35 +20,55 @@
           />
         </form>
       </div>
+
       <div id="weather-container">
+
         <div id="weather-results">
           <div id="title">
-            <h3 id="condition">Cloudy</h3>
-            <h2><span id="city">London</span>, <span id="country">England</span></h2>
+            <div id="current-weather">
+              <h3 id="condition">Cloudy</h3><img id="icon" src="./icons/weather-sunny.svg" />
+            </div>
+            <h2>
+              <span id="city">London</span>, <span id="country">England</span>
+            </h2>
           </div>
           <div id="info">
             <div id="temp-main">
-                <p id="temp">69</p>
-                <p class="temp-icon big">°F</p>
+              <p id="temp">69</p>
+              <p class="temp-icon big">°F</p>
             </div>
             <div id="extra-info">
               <ol id="info-list">
-                <li>Feels like: <div><span id="temp-feel">21</span><span class="temp-icon small">°F</span></div></li>
-                <li>Wind: <span id="wind-speed">6</span><span id="speed-unit">MPH</span></li>
-                <li>Humidity: <div><span id="humidity">32</span>%</div></li>
+                <li>
+                  Feels like:
+                  <div>
+                    <span id="temp-feel">21</span
+                    ><span class="temp-icon small">°F</span>
+                  </div>
+                </li>
+                <li>
+                  Wind: <span id="wind-speed">6</span
+                  ><span id="speed-unit">MPH</span>
+                </li>
+                <li>
+                  Humidity:
+                  <div><span id="humidity">32</span>%</div>
+                </li>
               </ol>
             </div>
           </div>
         </div>
         <dialog id="error-modal">
-          <p id="error-text"></p>
-          <button id="close-btn"></button>
+          <div>
+            <p id="error-text"></p>
+            <button id="close-btn"></button>
+          </div>
         </dialog>
       </div>
       <div id="footer">
         <div id="toggle-container">
           <label class="toggle">
-            <input type="checkbox" id="unit-toggle" name="unit-toggle"/>
+            <input type="checkbox" id="unit-toggle" name="unit-toggle" />
             <span class="slider"></span>
           </label>
           <span id="unit-example" class="temp-icon">°F</span>

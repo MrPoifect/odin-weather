@@ -1,6 +1,6 @@
 export { searchCity };
-import { displayCityErrorModal, displayLocationErrorModal } from '../index.js';
-import { renderCardInfo } from './info-card.js';
+import { displayCityErrorModal, displayLocationErrorModal, } from '../index.js';
+import { renderCardInfo, displaySpinner } from './info-card.js';
 
 const weatherURL =
   'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/';
@@ -12,10 +12,12 @@ const searchBar = document.querySelector('form');
 searchBar.addEventListener('submit', function (e) {
   e.preventDefault();
   const targetCity = document.getElementById('search-bar').value;
-  console.log(searchCity(targetCity));
+  displaySpinner();
+  searchCity(targetCity);
 });
 
 async function searchCity(city) {
+
   try {
     const response = await fetch(weatherURL + city + searchParameters);
     const weatherData = await response.json();
