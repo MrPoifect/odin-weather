@@ -78,5 +78,5 @@ function changeUnitToFahrenheit() {
   }
 
   tempTxt.textContent = Math.round(globalWData.currentConditions.temp);
-  tempFeelTxt.textContent = Math.round((tempFeel * 9/5) + 32);
+  tempFeelTxt.textContent = Math.round(globalWData.currentConditions.feelslike);
 }
